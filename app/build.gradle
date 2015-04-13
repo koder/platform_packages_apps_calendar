@@ -1,0 +1,31 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "com.android.calendar"
+        minSdkVersion 15
+        targetSdkVersion 22
+
+        testApplicationId "com.android.calendar.tests"
+        testInstrumentationRunner "android.test.InstrumentationTestRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile project(':chips')
+    compile project(':calendarCommon')
+    compile project(':colorpicker')
+    compile project(':datetimepicker')
+    compile project(':standalonecalendartimezonepicker')
+    compile project(':common')
+}
